@@ -1,9 +1,10 @@
 package DeskFlow.API.demo.model;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import java.time.LocalDateTime;
-
-
+import java.time.Instant;
+    @NotNull
     @Entity
     @Getter
     @Setter
@@ -25,11 +26,11 @@ import java.time.LocalDateTime;
 
         private String setor;
 
-        private LocalDateTime dataAbertura;
+        private Instant dataAbertura;
 
-        private LocalDateTime dataInicioAtendimento;
+        private Instant dataInicioAtendimento;
 
-        private LocalDateTime dataFinalizacao;
+        private Instant dataFinalizacao;
 
         @Column(length = 1000)
         private String observacao;
