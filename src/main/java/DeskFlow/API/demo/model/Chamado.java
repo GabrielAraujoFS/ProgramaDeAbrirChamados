@@ -4,25 +4,28 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import java.time.Instant;
-    @NotNull
     @Entity
     @Getter
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
+
     public class Chamado {
+
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-
+        @NotNull
+        @NotBlank(message = "Título é obrigatório")
         private String titulo;
 
         @Column(length = 1000)
+        @NotBlank(message = "Descrição é obrigatória")
         private String descricao;
-
         @Enumerated(EnumType.STRING)
         private StatusChamado status;
+
 
         private String setor;
 
